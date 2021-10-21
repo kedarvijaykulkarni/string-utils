@@ -17,10 +17,11 @@
     "String",
     "Utils"
   ],
-  "author": "Kedar Vijay Kulkarni",
+  "author": "Kedar Vijay Kulkarni <kedarvijaykulkarni@gmail.com> (https://www.linkedin.com/in/kedarvijaykulkarni/)",
   "contributors": [
     {
       "name": "Kedar Vijay Kulkarni",
+      "email" : "kedarvijaykulkarni@gmail.com",
       "url": "https://github.com/kedarvijaykulkarni"
     }
   ],
