@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/kedarvijaykulkarni/string-utils.git"
   },
+  "publishConfig": {
+    "@kedarvijaykulkarni": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "JavaScript",
     "JS",
