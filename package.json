@@ -1,5 +1,5 @@
 {
-  "name": "@kedarvijaykulkarni/string-utils",
+  "name": "@kedarvijaykulkarni/stringapi",
   "version": "1.0.0",
   "description": "string utility functions for javascript",
   "main": "lib/index.js",
