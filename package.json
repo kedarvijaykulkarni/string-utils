@@ -2,7 +2,7 @@
   "name": "stringapi",
   "version": "1.0.0",
   "description": "string utility functions for javascript",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"
