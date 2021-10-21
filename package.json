@@ -1,0 +1,39 @@
+{
+  "name": "stringapi",
+  "version": "1.0.0",
+  "description": "string utility functions for javascript",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./lib",
+    "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedarvijaykulkarni/string-utils.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "JS",
+    "String",
+    "Utils"
+  ],
+  "author": "Kedar Vijay Kulkarni",
+  "contributors": [
+    {
+      "name": "Kedar Vijay Kulkarni",
+      "url": "https://github.com/kedarvijaykulkarni"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kedarvijaykulkarni/string-utils/issues"
+  },
+  "homepage": "https://github.com/kedarvijaykulkarni/string-utils#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
+}
