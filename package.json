@@ -1,5 +1,5 @@
 {
-  "name": "string-methods",
+  "name": "@kedarvijaykulkarni/string-utils",
   "version": "1.0.0",
   "description": "string utility functions for javascript",
   "main": "lib/index.js",
