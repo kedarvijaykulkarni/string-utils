@@ -1,5 +1,5 @@
 {
-  "name": "stringapi",
+  "name": "string-methods",
   "version": "1.0.0",
   "description": "string utility functions for javascript",
   "main": "lib/index.js",
