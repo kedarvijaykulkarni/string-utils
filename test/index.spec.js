@@ -5,7 +5,7 @@ describe('Check string method', function () {
   it('should check the given value is string', function () {
     const str = '';
     assert.equal(
-      stringapi.isString(str),
+      stringapi.isString(str).isString,
       true,
       'given value is string'
     );
