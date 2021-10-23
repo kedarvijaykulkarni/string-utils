@@ -1,18 +1,11 @@
 {
-  "name": "@kedarvijaykulkarni/stringapi",
-  "version": "1.0.5",
+  "name": "js_str_utils",
+  "version": "1.0.6",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kedarvijaykulkarni/string-utils.git"
-  },
-  "publishConfig": {
-    "@kedarvijaykulkarni": "https://npm.pkg.github.com"
   },
   "keywords": [
     "JavaScript",
