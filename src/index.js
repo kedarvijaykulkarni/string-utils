@@ -29,11 +29,7 @@ module.exports = {
   },
 
   isString(val) {
-    let check = typeof val === 'string';
-    return {
-      isString: check,
-      message: check ? 'is a String' : 'not a string'
-    };
+    return typeof val === 'string';
   },
 
   isNotEmpty(val) {
