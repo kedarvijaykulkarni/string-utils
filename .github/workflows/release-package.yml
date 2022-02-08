@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org/'
-      - run: add user --registry=https://github.com/kedarvijaykulkarni/string-utils --scope=@mantium
+      - run: npm adduser --registry=https://github.com/kedarvijaykulkarni/string-utils --scope=@mantium
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: npm publish
         env:
