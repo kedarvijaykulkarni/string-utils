@@ -29,6 +29,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
       - run: npm ci
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - run: npm publish --regsitry=github:kedarvijaykulkarni/string-utils.git
+      - run: yarn publish --regsitry=github:kedarvijaykulkarni/string-utils.git
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
