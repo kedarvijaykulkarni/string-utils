@@ -10,7 +10,7 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '16.x'
           registry-url: 'https://registry.npmjs.org/'
       - run: npm install
       - run: npm run build
@@ -22,18 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '16.x'
           registry-url: 'https://registry.npmjs.org/'
-      - name: Publish
-        run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --ignore-scripts
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: |
-          npm config set //registry.npmjs.org/:_authToken ${NODE_AUTH_TOKEN}
-          npm publish
+      - run: npm ci
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
