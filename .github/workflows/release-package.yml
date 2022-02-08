@@ -23,7 +23,10 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: https://registry.npmjs.org/
-      - echo //registry.npmjs.org/:_authToken=${{secrets.npm_token}} > .npmrc
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: publish
+        environment:
+          NPM_TOKEN:
+            from_secret: NPM_TOKEN
+        commands:
+        - echo //registry.npmjs.org/:_authToken=$NPM_TOKEN > .npmrc
+        - npm publish
