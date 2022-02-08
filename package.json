@@ -1,8 +1,12 @@
 {
   "name": "@mantium/string-utils",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kedarvijaykulkarni/string-utils.git"
+  },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"

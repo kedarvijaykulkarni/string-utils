@@ -10,20 +10,26 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: 14
       - run: npm install
-      - run: npm run build
+      - run: npm run build --if-present
+        name: Build
       - run: npm test
+        env:
+          CI: true
 
   publish-npm:
+    if: github.ref == 'refs/heads/main'
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-          registry-url: https://registry.npmjs.org/
-      - run: echo //registry.npmjs.org/:_authToken=${{secrets.npm_token}} > .npmrc
-      - run: npm publish
+          node-version: 14
+      - name: Publish
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm publish --ignore-scripts
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
