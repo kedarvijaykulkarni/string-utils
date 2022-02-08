@@ -1,6 +1,6 @@
 {
   "name": "@mantium/string-utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
   "repository": {
