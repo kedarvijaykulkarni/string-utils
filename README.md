@@ -20,7 +20,7 @@ mention in the package.js
 ## Usage
 
 ```js
-  const stringapi = require('../lib/index');
+  const stringapi = require('../src/index');
 ```
 
 ### isString

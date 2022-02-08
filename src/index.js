@@ -55,4 +55,8 @@ module.exports = {
   hasProperty(obj, key) {
     return Object.prototype.hasOwnProperty.call(obj, key);
   },
+
+  isPalindrome(val) {
+    return val == val.split('').reverse().join('')
+  }
 };
