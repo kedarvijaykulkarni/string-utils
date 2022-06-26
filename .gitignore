@@ -196,3 +196,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,vapor
+
+# ignore custom bash
+check.sh

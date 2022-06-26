@@ -1,18 +1,14 @@
 {
-  "name": "@kedarvijaykulkarni/stringapi",
+  "name": "@mantium/string-utils",
   "version": "1.4.1",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@mantium"
+  },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kedarvijaykulkarni/string-utils.git"
-  },
-  "publishConfig": {
-    "@kedarvijaykulkarni": "https://npm.pkg.github.com"
   },
   "keywords": [
     "JavaScript",
