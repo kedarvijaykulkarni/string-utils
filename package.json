@@ -1,11 +1,8 @@
 {
   "name": "@mantium/string-utils",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@mantium"
-  },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "test": "mocha --use_strict --timeout 0 ./test/**/*.spec.js"
