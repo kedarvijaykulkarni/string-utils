@@ -1,6 +1,6 @@
 {
   "name": "@kedarvijaykulkarni/stringapi",
-  "version": "1.0.5",
+  "version": "1.4.1",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "contributors": [
     {
       "name": "Kedar Vijay Kulkarni",
-      "email" : "kedarvijaykulkarni@gmail.com",
+      "email": "kedarvijaykulkarni@gmail.com",
       "url": "https://github.com/kedarvijaykulkarni"
     }
   ],
