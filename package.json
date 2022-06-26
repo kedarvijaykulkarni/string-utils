@@ -4,7 +4,7 @@
   "description": "string utility functions for javascript",
   "main": "src/index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@mantium"
+    "registry": "https://npm.pkg.github.com/@mantium"
   },
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
@@ -20,7 +20,7 @@
   "contributors": [
     {
       "name": "Kedar Vijay Kulkarni",
-      "email" : "kedarvijaykulkarni@gmail.com",
+      "email": "kedarvijaykulkarni@gmail.com",
       "url": "https://github.com/kedarvijaykulkarni"
     }
   ],
