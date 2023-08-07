@@ -7,14 +7,14 @@ string utility functions in javascript
 Install [Node.js](https://nodejs.org/en/) on your computer. To install JavaScript Library please use the following command.
 
 ```js
-  npm install @mantium/string-utils
+  npm install js_str_utils
 ```
 
 mention in the package.js
 
 ```json
   "devDependencies": {
-    "@mantium/string-utils": "1.0.0"
+    "js_str_utils": "1.4.1"
   }
 ```
 ## Usage
