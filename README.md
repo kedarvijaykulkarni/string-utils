@@ -41,12 +41,12 @@ mention in the package.js
 convert object to query param
 
 ```js
-  let domain = 'https://api.mantiumai.com'
-  let queryStr = stringapi.objToQueryStr({name: 'kedar', id: 10})
+  let domain = 'https://api.github.com'
+  let queryStr = stringapi.objToQueryStr({users: 'kedman1234', id: 10})
   console.log(`${domain}${queryStr}`);
 ```
 #### Example of a successful completion response
 
 ```js
-  https://api.mantiumai.com?name=kedar&id=10
+  https://api.github.com/?users=kedman1234&id=834949
 ```
