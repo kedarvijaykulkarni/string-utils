@@ -50,3 +50,7 @@ convert object to query param
 ```js
   https://api.github.com/?users=kedman1234&id=834949
 ```
+
+## For more examples
+To see all methods, input and results please visit  
+[https://kedarvijaykulkarni.github.io/string-utils/](https://kedarvijaykulkarni.github.io/string-utils/)
