@@ -2,7 +2,7 @@
 ## Usage
 
 ```js
-  const stringApi = require('../src/index');
+  const stringApi = require('js_str_utils');
 ```
 
 <details>
