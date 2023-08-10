@@ -1,6 +1,6 @@
 {
   "name": "js_str_utils",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "string utility functions for javascript",
   "main": "src/index.js",
   "scripts": {
