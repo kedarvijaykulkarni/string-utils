@@ -14,20 +14,20 @@ mention in the package.js
 
 ```json
   "devDependencies": {
-    "js_str_utils": "1.4.1"
+    "js_str_utils": "1.4.2"
   }
 ```
 ## Usage
 
 ```js
-  const stringapi = require('../src/index');
+  const stringApi = require('js_str_utils');
 ```
 
 ### isString
 
 ```js
   let str = '';
-  console.log(stringapi.isString(str));
+  console.log(stringApi.isString(str));
 ```
 #### Example of a successful completion response
 
@@ -42,7 +42,7 @@ convert object to query param
 
 ```js
   let domain = 'https://api.github.com'
-  let queryStr = stringapi.objToQueryStr({users: 'kedman1234', id: 10})
+  let queryStr = stringApi.objToQueryStr({users: 'kedman1234', id: 10})
   console.log(`${domain}${queryStr}`);
 ```
 #### Example of a successful completion response
@@ -50,3 +50,7 @@ convert object to query param
 ```js
   https://api.github.com/?users=kedman1234&id=834949
 ```
+
+## For more examples
+To see all methods, input and results please visit  
+[https://kedarvijaykulkarni.github.io/string-utils/](https://kedarvijaykulkarni.github.io/string-utils/)
