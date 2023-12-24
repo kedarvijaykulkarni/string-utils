@@ -1,11 +1,18 @@
 module.exports = {
   /**
+   * Return array of [null, undefined] for compare internally
+   * @returns {[]]} [null, undefined]
+   */
+  nullUndefined() {
+    return [null, undefined];
+  },
+  /**
    * Given value is valid or not
    * @param {*} val
    * @returns {boolean} true/false
    */
   isValid(input) {
-    if (!input) throw new Error("Please provided a valid input!");
+    if (!input && typeof input !== "number") throw new Error("Please provided a valid input!");
     return true;
   },
 
@@ -15,8 +22,8 @@ module.exports = {
    * @returns {boolean} true/false
    */
   isNil(val) {
-    if ([null, undefined].includes(val) || this.isValid(val))
-      return [null, undefined].includes(val);
+    if (this.nullUndefined().includes(val) || this.isValid(val))
+      return this.nullUndefined().includes(val);
   },
 
   /**
@@ -43,6 +50,7 @@ module.exports = {
    * @returns {boolean} true/false
    */
   isNotNull(val) {
+    if (this.nullUndefined().includes(val)) return false;
     if (this.isValid(val)) return !this.isNull(val);
   },
 
@@ -52,6 +60,8 @@ module.exports = {
    * @returns {boolean} true/false
    */
   isObject(val) {
+    if (val === null) return true;
+    if ([undefined, ""].includes(val)) return false;
     if (this.isValid(val))
       return typeof val === "object" && this.isNotNull(val);
   },
@@ -162,6 +172,7 @@ module.exports = {
    * @returns {boolean}
    */
   isNumber(val) {
+    if ([null, undefined, ""].includes(val)) return false;
     if (this.isValid(val)) return typeof val === "number";
   },
 
