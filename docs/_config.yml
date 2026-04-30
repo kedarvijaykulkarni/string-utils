@@ -1,0 +1,36 @@
+title: js_str_utils
+description: >-
+  Lightweight string utility functions for JavaScript —
+  type checking, transformation, URL helpers, and more.
+
+url: "https://kedarvijaykulkarni.github.io"
+baseurl: "/string-utils"
+
+# Cayman is a clean, single-column theme well-suited for documentation
+theme: jekyll-theme-cayman
+
+author:
+  name: Kedar Vijay Kulkarni
+  url: https://github.com/kedarvijaykulkarni
+
+# Show a "View on GitHub" button in the Cayman header
+github:
+  repository_url: https://github.com/kedarvijaykulkarni/string-utils
+
+# Markdown and syntax highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Plugins available on GitHub Pages
+plugins:
+  - jekyll-seo-tag
+
+# Exclude development files from the built site
+exclude:
+  - styleguide.md
+  - "*.sh"
+  - Gemfile
+  - Gemfile.lock
