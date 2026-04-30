@@ -1,7 +1,7 @@
 {
   "name": "js_str_utils",
   "version": "1.4.7",
-  "description": "string utility functions for javascript",
+  "description": "Lightweight string utility functions for JavaScript — type checking, transformation, URL helpers, and more",
   "main": "src/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
@@ -11,7 +11,17 @@
     "JavaScript",
     "JS",
     "String",
-    "Utils"
+    "Utils",
+    "string-utils",
+    "string-helpers",
+    "type-check",
+    "validation",
+    "URL",
+    "query-string",
+    "palindrome",
+    "truncate",
+    "capitalize",
+    "utility"
   ],
   "author": "Kedar Vijay Kulkarni <kedarvijaykulkarni@gmail.com> (https://www.linkedin.com/in/kedarvijaykulkarni/)",
   "contributors": [
@@ -26,14 +36,17 @@
     "url": "https://github.com/kedarvijaykulkarni/string-utils/issues"
   },
   "engines": {
-    "node": ">=12.22.12"
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/kedarvijaykulkarni/string-utils#readme",
+  "overrides": {
+    "serialize-javascript": "7.0.5"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "chai": "^4.3.4",
-    "mocha": "^9.1.3"
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "chai": "^6.2.2",
+    "mocha": "^11.3.0"
   }
 }

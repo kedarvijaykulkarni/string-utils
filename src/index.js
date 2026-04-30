@@ -192,7 +192,7 @@ module.exports = {
    * @returns {boolean}
    */
   hasProperty(obj, key) {
-    if (this.isObject(val) && this.isValid(key))
+    if (this.isObject(obj) && this.isValid(key))
       return Object.prototype.hasOwnProperty.call(obj, key);
   },
 
@@ -225,5 +225,166 @@ module.exports = {
    */
   decodeURI(val) {
     if (this.isValid(val)) return decodeURI(val);
+  },
+
+  // ─── New Helper Functions ────────────────────────────────────────────────────
+
+  /**
+   * Capitalizes the first character of a string
+   * @param {string} str
+   * @returns {string}
+   */
+  capitalize(str) {
+    if (this.isValid(str) && this.isString(str))
+      return str.charAt(0).toUpperCase() + str.slice(1);
+  },
+
+  /**
+   * Converts a string to Title Case
+   * @param {string} str
+   * @returns {string}
+   */
+  toTitleCase(str) {
+    if (this.isValid(str) && this.isString(str))
+      return str.replace(
+        /\w\S*/g,
+        (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      );
+  },
+
+  /**
+   * Truncates a string to maxLength, appending suffix if truncated
+   * @param {string} str
+   * @param {number} maxLength
+   * @param {string} [suffix='...']
+   * @returns {string}
+   */
+  truncate(str, maxLength, suffix = "...") {
+    if (this.isValid(str) && this.isString(str) && this.isNumber(maxLength)) {
+      if (str.length <= maxLength) return str;
+      return str.slice(0, maxLength - suffix.length) + suffix;
+    }
+  },
+
+  /**
+   * Trims whitespace from both ends of a string
+   * @param {string} str
+   * @returns {string}
+   */
+  trim(str) {
+    if (this.isValid(str) && this.isString(str)) return str.trim();
+  },
+
+  /**
+   * Trims whitespace from the start of a string
+   * @param {string} str
+   * @returns {string}
+   */
+  trimStart(str) {
+    if (this.isValid(str) && this.isString(str)) return str.trimStart();
+  },
+
+  /**
+   * Trims whitespace from the end of a string
+   * @param {string} str
+   * @returns {string}
+   */
+  trimEnd(str) {
+    if (this.isValid(str) && this.isString(str)) return str.trimEnd();
+  },
+
+  /**
+   * Checks whether a string starts with the given prefix
+   * @param {string} str
+   * @param {string} prefix
+   * @returns {boolean}
+   */
+  startsWith(str, prefix) {
+    if (this.isValid(str) && this.isString(str) && this.isValid(prefix))
+      return str.startsWith(prefix);
+  },
+
+  /**
+   * Checks whether a string ends with the given suffix
+   * @param {string} str
+   * @param {string} suffix
+   * @returns {boolean}
+   */
+  endsWith(str, suffix) {
+    if (this.isValid(str) && this.isString(str) && this.isValid(suffix))
+      return str.endsWith(suffix);
+  },
+
+  /**
+   * Checks whether a string contains the given substring
+   * @param {string} str
+   * @param {string} substr
+   * @returns {boolean}
+   */
+  contains(str, substr) {
+    if (this.isValid(str) && this.isString(str) && this.isValid(substr))
+      return str.includes(substr);
+  },
+
+  /**
+   * Counts the number of words in a string
+   * @param {string} str
+   * @returns {number}
+   */
+  countWords(str) {
+    if (this.isValid(str) && this.isString(str))
+      return str.trim().split(/\s+/).filter((w) => w.length > 0).length;
+  },
+
+  /**
+   * Reverses a string
+   * @param {string} str
+   * @returns {string}
+   */
+  reverseString(str) {
+    if (this.isValid(str) && this.isString(str))
+      return str.split("").reverse().join("");
+  },
+
+  /**
+   * Counts non-overlapping occurrences of substr within str
+   * @param {string} str
+   * @param {string} substr
+   * @returns {number}
+   */
+  countOccurrences(str, substr) {
+    if (this.isValid(str) && this.isString(str)) {
+      if (substr === "" || this.nullUndefined().includes(substr)) return 0;
+      if (this.isString(substr)) {
+        let count = 0;
+        let index = 0;
+        while ((index = str.indexOf(substr, index)) !== -1) {
+          count++;
+          index += substr.length;
+        }
+        return count;
+      }
+    }
+  },
+
+  /**
+   * Strips HTML tags from a string
+   * @param {string} str
+   * @returns {string}
+   */
+  stripHtml(str) {
+    if (this.isValid(str) && this.isString(str))
+      return str.replace(/<[^>]*>/g, "");
+  },
+
+  /**
+   * Repeats a string n times
+   * @param {string} str
+   * @param {number} n
+   * @returns {string}
+   */
+  repeat(str, n) {
+    if (this.isValid(str) && this.isString(str) && this.isNumber(n))
+      return str.repeat(n);
   },
 };
