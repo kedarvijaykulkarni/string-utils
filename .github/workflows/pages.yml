@@ -9,13 +9,13 @@ on:
       - 'CHANGELOG.md'
   workflow_dispatch:   # allow manual re-deploys from the Actions tab
 
-# Grant the GITHUB_TOKEN the permissions required by deploy-pages
+# Permissions required by upload-pages-artifact and deploy-pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Only one deployment runs at a time; do not cancel an in-progress deploy
+# Only one Pages deployment runs at a time; never cancel an in-progress deploy
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -31,17 +31,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
+        # Outputs: base_url, base_path, origin — used below so all
+        # asset and page URLs are correct for the /string-utils sub-path.
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./docs
           destination: ./_site
+          # Pass the canonical base URL so Jekyll resolves links correctly
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
-        # default artifact path is ./_site
+        with:
+          path: ./_site
 
   # ─── Deploy ─────────────────────────────────────────────────────────────────
   deploy:
@@ -56,4 +62,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
