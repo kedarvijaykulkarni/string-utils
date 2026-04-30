@@ -199,3 +199,6 @@ $RECYCLE.BIN/
 
 # ignore custom bash
 check.sh
+
+
+.claude/

@@ -9,6 +9,11 @@ on:
     types: [published]
   workflow_dispatch:
 
+# Opt into Node.js 24 action runtime now — avoids deprecation warnings for
+# actions/checkout and actions/setup-node until @v5 versions are pinned.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -73,6 +78,18 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Check version not already published
+        run: |
+          PKG_NAME=$(node -p "require('./package.json').name")
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          echo "Package : $PKG_NAME@$PKG_VERSION"
+          if npm view "$PKG_NAME@$PKG_VERSION" version 2>/dev/null | grep -q "$PKG_VERSION"; then
+            echo "ERROR: $PKG_NAME@$PKG_VERSION is already published on npm."
+            echo "Bump the version in package.json before creating a release."
+            exit 1
+          fi
+          echo "Version $PKG_VERSION is not yet published. Proceeding."
 
       - name: Publish package
         run: npm publish --provenance --access public
